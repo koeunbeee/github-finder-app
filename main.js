@@ -31,3 +31,47 @@ const forksCount = document.querySelector('#forks');
 // ) {
 //   this.profileName;
 // }
+
+class User {
+  userName;
+  userImg;
+  userUrl;
+  followers;
+  following;
+  publicGists;
+  publicRepos;
+  company;
+  blog;
+  location;
+  since;
+  // reposUrl;
+  constructor(
+    login,
+    avartarUrl,
+    htmlUrl,
+    followers,
+    following,
+    publicGists,
+    publicRepos,
+    company,
+    blog,
+    location,
+    since
+  ) {
+    this.userName = login;
+    this.userImg = avartarUrl;
+    this.userUrl = htmlUrl;
+    this.followers = followers;
+    this.following = following;
+    this.publicGists = publicGists;
+    this.publicRepos = publicRepos;
+    this.company = company;
+    this.blog = blog;
+    this.location = location;
+    this.since = since;
+  }
+}
+
+class Repos {
+  repoName;
+}
