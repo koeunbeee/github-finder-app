@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Finder</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h3>GitHub Finder</h3>
+    </header>
+    <main>
+      <div class="app">
+        <section class="search-container">
+          <h1>Search GitHub Users</h1>
+          <p>Enter a userame to fetch a user profile and repos</p>
+          <input class="search-box" />
+        </section>
+        <section class="view-profile-container">
+          <div class="view-profile-box">
+            <img class="picture" />
+            <button class="view-profile-button">View Profile</button>
+          </div>
+          <div class="view-profile-info-box">
+            <ul class="profile-info-box01">
+              <li class="public-repos">
+                <span> Pubilc Repos: </span>
+                <span id="public-repos"></span>
+              </li>
+              <li class="public-gists">
+                <span> Public Gists: </span>
+                <span id="public-gists"></span>
+              </li>
+              <li class="followers">
+                <span> Followers: </span>
+                <span id="followers"></span>
+              </li>
+              <li class="following">
+                <span> Following: </span>
+                <span id="following"></span>
+              </li>
+            </ul>
+            <ul class="profile-info-box02">
+              <li class="company">
+                <span>Company:</span>
+                <span id="company"></span>
+              </li>
+              <li class="website">
+                <span>Website/Blog:</span>
+                <span id="website"></span>
+              </li>
+              <li class="location">
+                <span>Location:</span>
+                <span id="location"></span>
+              </li>
+              <li class="member-since">
+                <span>Member Since:</span>
+                <span id="member-since"></span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="latest-repos-container">
+          <h2>Latest Repos</h2>
+          <div class="repos-list">
+            <ul class="repos-list">
+              <li class="repo-info">
+                <span id="repo-name"></span>
+                <span id="stars-button">Stars:</span>
+                <span id="watchers-button">Watchers:</span>
+                <span id="forks-button">Forks:</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
