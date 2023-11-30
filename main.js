@@ -1,36 +1,21 @@
-const searchInput = document.querySelector('.search-Box');
-const profileImg = document.querySelector('.profile-img');
-const viewProfileButton = document.querySelector('.view-profile-button');
-const reposCount = document.querySelector('#public-repos');
-const gistsCount = document.querySelector('#public-gists');
-const followersCount = document.querySelector('#followers');
-const followingCount = document.querySelector('#following');
-const companyName = document.querySelector('#company');
-const websiteAdrres = document.querySelector('#website');
-const locationAdrres = document.querySelector('#location');
-const memberSince = document.querySelector('#member-since');
-const reposList = document.querySelector('.repos-list');
-const repoName = document.querySelector('#repo-name');
-const starsCount = document.querySelector('#stars');
-const watchersCount = document.querySelector('#watchers');
-const forksCount = document.querySelector('#forks');
-
-// function User(
-//   profileName,
-//   repo,
-//   gist,
-//   follower,
-//   following,
-//   company,
-//   website,
-//   location,
-//   memberSince,
-//   stars,
-//   watchers,
-//   forks
-// ) {
-//   this.profileName;
-// }
+const searchInput = document.querySelector('input');
+const profileImg = document.getElementsByClassName('profile-img');
+const viewProfileButton = document.getElementsByClassName(
+  'view-profile-button'
+);
+const reposCount = document.getElementById('public-repos');
+const gistsCount = document.getElementById('public-gists');
+const followersCount = document.getElementById('followers');
+const followingCount = document.getElementById('following');
+const companyName = document.getElementById('company');
+const websiteAdrres = document.getElementById('website');
+const locationAdrres = document.getElementById('location');
+const memberSince = document.getElementById('member-since');
+const reposList = document.getElementsByClassName('repos-list');
+const repoName = document.getElementById('repo-name');
+const starsCount = document.getElementById('stars');
+const watchersCount = document.getElementById('watchers');
+const forksCount = document.getElementById('forks');
 
 class User {
   userName;
@@ -85,12 +70,50 @@ class Repos {
   }
 }
 
-//  searchInput.addEventListener('keydown', (e) => {
-//   console.log('아');
-//   const searchName = e.target.value;
+console.log(searchInput);
+console.log(profileImg);
+
+// function searchName() {
+//   const isSearch = document.getElementsByClassName('search-Box').value;
+//   console.log(isSearch);
+//   isSearch.addEventListener('onkeypress', async (e) => {
+//     if (e !== '') {
+//       console.log(e.target.value);
+//       const searched = e.target.value;
+//       const searchGetData = await axios.get(
+//         'https://api.github.com/users/' + isSearch
+//       );
+
+//       console.log(searchGetData);
+//       console.log(e.target.value);
+//       console.log(searched);
+//     }
+//  const searchName = e.target.value;
 //   try {
-//     const search = await axios.get('https://api.github.com/users/' + searchName);
+//     const search = await axios.get(
+//       'https://api.github.com/users/' + searchName
+//     );
 //   } catch (error) {
 //     console.log('not found');
 //   }
-//  });
+//   });
+// }
+searchInput.addEventListener('input', getData);
+
+async function getData(e) {
+  if (e) {
+    const searched = e.target.value;
+    const searchGetData = await axios.get(
+      'https://api.github.com/users/' + searched
+    );
+
+    console.log(searchGetData);
+    console.log(searched);
+  } else {
+    const searched = e.target.value;
+    const searchGet = await axios.get(
+      'https://api.github.com/users?q=' + searched + 'in:name'
+    );
+    console.log(searchGet);
+  }
+}
